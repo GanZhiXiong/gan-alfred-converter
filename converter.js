@@ -8,6 +8,12 @@ export const MeterUnit = {
     M3: 2,
 }
 
+export const TemperatureUnit = {
+    CELSIUS: 'Celsius',
+    FAHRENHEIT: 'Fahrenheit',
+    KELVIN: 'Kelvin'
+};
+
 export const chunkRight = (arr, size) => {
     const rm = arr.length % size
     return rm
@@ -16,6 +22,44 @@ export const chunkRight = (arr, size) => {
 }
 
 const converter = {
+    temp: (value, fromUnit, toUnit) => {
+        if (fromUnit === toUnit) {
+            return value;
+        }
+
+        switch (fromUnit) {
+            case TemperatureUnit.CELSIUS:
+                switch (toUnit) {
+                    case TemperatureUnit.FAHRENHEIT:
+                        return (value * 9 / 5) + 32;
+                    case TemperatureUnit.KELVIN:
+                        return value + 273.15;
+                }
+                break;
+
+            case TemperatureUnit.FAHRENHEIT:
+                switch (toUnit) {
+                    case TemperatureUnit.CELSIUS:
+                        return (value - 32) * 5 / 9;
+                    case TemperatureUnit.KELVIN:
+                        return (value + 459.67) * 5 / 9;
+                }
+                break;
+
+            case TemperatureUnit.KELVIN:
+                switch (toUnit) {
+                    case TemperatureUnit.CELSIUS:
+                        return value - 273.15;
+                    case TemperatureUnit.FAHRENHEIT:
+                        return (value * 9 / 5) - 459.67;
+                }
+                break;
+
+            default:
+                throw new Error('Invalid temperature units');
+        }
+    },
+
     meterUnit: (number, {fromMeterUnit = MeterUnit.GAL, toMeterUnit = MeterUnit.GAL} = {}) => {
         const galToCcf = 0.1336808
         const galToCubicMeter = 0.0037854

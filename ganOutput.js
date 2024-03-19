@@ -1,4 +1,4 @@
-import converter, {MeterUnit} from './converter.js'
+import converter, {MeterUnit, TemperatureUnit} from './converter.js'
 
 const ganOutput = {
     toMeterUnit: (value, fromMeterUnit, toMeterUnit) => {
@@ -37,6 +37,46 @@ const ganOutput = {
                     icon: {
                         path: 'icons/m3.png',
                     },
+                }
+        }
+    },
+
+    toTempUnit: (value, fromUnit, toUnit) => {
+        let result = converter.temp(value, fromUnit, toUnit)
+        return ganOutput.tempUnit(toUnit, result)
+    },
+
+    tempUnit: (unit, value) => {
+        switch (unit) {
+            case TemperatureUnit.CELSIUS:
+                return {
+                    title: value,
+                    subtitle: 'ºC',
+                    uid: 'c',
+                    arg: value,
+                    // icon: {
+                    //     path: 'icons/gal.png',
+                    // },
+                }
+            case TemperatureUnit.FAHRENHEIT:
+                return {
+                    title: value,
+                    subtitle: 'ºF',
+                    uid: 'f',
+                    arg: value,
+                    // icon: {
+                    //     path: 'icons/ccf.png',
+                    // },
+                }
+            case TemperatureUnit.KELVIN:
+                return {
+                    title: value,
+                    subtitle: 'K',
+                    uid: 'k',
+                    arg: value,
+                    // icon: {
+                    //     path: 'icons/m3.png',
+                    // },
                 }
         }
     },

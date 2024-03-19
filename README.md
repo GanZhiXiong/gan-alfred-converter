@@ -41,4 +41,4 @@
 
 ## License
 
-MIT license. [See LICENSE](https://github.com/Jaesung-Jung/number-system-converter/blob/main/LICENSE) for details.
+MIT license.
