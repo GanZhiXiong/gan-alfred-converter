@@ -66,7 +66,7 @@ const converter = {
         }
 
         number *= conversionFactor
-        // return number
+        return number
         return Math.trunc(number * 1000) / 1000
     },
 
