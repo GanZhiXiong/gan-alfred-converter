@@ -86,6 +86,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>C0A63611-645E-4EE9-A335-72C57B93A356</key>
+		<array/>
 		<key>CA32C462-65DA-4797-BADE-F79E4CB78A49</key>
 		<array>
 			<dict>
@@ -572,6 +574,55 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>l</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Converting ...</string>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node l "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Type any number</string>
+				<key>title</key>
+				<string>升</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C0A63611-645E-4EE9-A335-72C57B93A356</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>see https://github.com/GanZhiXiong/gan-alfred-converter</string>
@@ -632,6 +683,13 @@
 			<integer>10</integer>
 			<key>ypos</key>
 			<integer>125</integer>
+		</dict>
+		<key>C0A63611-645E-4EE9-A335-72C57B93A356</key>
+		<dict>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>835</integer>
 		</dict>
 		<key>CA32C462-65DA-4797-BADE-F79E4CB78A49</key>
 		<dict>

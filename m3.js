@@ -9,6 +9,7 @@ const main = (input) => {
   }
 
   const output = [
+    ganOutput.toMeterUnit(input, MeterUnit.M3, MeterUnit.L),
     ganOutput.toMeterUnit(input, MeterUnit.M3, MeterUnit.GAL),
     ganOutput.toMeterUnit(input, MeterUnit.M3, MeterUnit.CCF),
   ]

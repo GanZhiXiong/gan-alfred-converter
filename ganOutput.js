@@ -38,6 +38,16 @@ const ganOutput = {
                         path: 'icons/m3.png',
                     },
                 }
+            case MeterUnit.L:
+                return {
+                    title: value,
+                    subtitle: 'L',
+                    uid: 'l',
+                    arg: value,
+                    icon: {
+                        path: 'icons/ccf1.png',
+                    },
+                }
         }
     },
 

@@ -6,6 +6,7 @@ export const MeterUnit = {
     GAL: 0,
     CCF: 1,
     M3: 2,
+    L: 3,
 }
 
 export const TemperatureUnit = {
@@ -74,10 +75,13 @@ const converter = {
             case MeterUnit.GAL:
                 switch (toMeterUnit) {
                     case MeterUnit.CCF:
-                        conversionFactor = galToCcf
+                        conversionFactor = galToCcf / 100
                         break
                     case MeterUnit.M3:
                         conversionFactor = galToCubicMeter
+                        break
+                    case MeterUnit.L:
+                        conversionFactor = galToCubicMeter * 1000
                         break
                     default:
                         break
@@ -91,6 +95,9 @@ const converter = {
                     case MeterUnit.M3:
                         conversionFactor = ccfToCubicMeter
                         break
+                    case MeterUnit.L:
+                        conversionFactor = ccfToCubicMeter * 1000
+                        break
                     default:
                         break
                 }
@@ -101,7 +108,25 @@ const converter = {
                         conversionFactor = cubicMeterToGal
                         break
                     case MeterUnit.CCF:
-                        conversionFactor = cubicMeterToCcf
+                        conversionFactor = cubicMeterToCcf / 100
+                        break
+                    case MeterUnit.L:
+                        conversionFactor = 1000
+                        break
+                    default:
+                        break
+                }
+                break
+            case MeterUnit.L:
+                switch (toMeterUnit) {
+                    case MeterUnit.GAL:
+                        conversionFactor = cubicMeterToGal / 1000
+                        break
+                    case MeterUnit.CCF:
+                        conversionFactor = cubicMeterToCcf / 1000 / 100
+                        break
+                    case MeterUnit.M3:
+                        conversionFactor = 1 / 1000
                         break
                     default:
                         break

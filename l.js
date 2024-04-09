@@ -9,9 +9,9 @@ const main = (input) => {
   }
 
   const output = [
-    ganOutput.toMeterUnit(input, MeterUnit.GAL, MeterUnit.CCF),
-    ganOutput.toMeterUnit(input, MeterUnit.GAL, MeterUnit.M3),
-    ganOutput.toMeterUnit(input, MeterUnit.GAL, MeterUnit.L),
+    ganOutput.toMeterUnit(input, MeterUnit.L, MeterUnit.M3),
+    ganOutput.toMeterUnit(input, MeterUnit.L, MeterUnit.GAL),
+    ganOutput.toMeterUnit(input, MeterUnit.L, MeterUnit.CCF),
   ]
   alfy.output(output)
 }
